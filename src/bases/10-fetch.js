@@ -1,6 +1,6 @@
 
 
-const apiKey = 'YQnG8xqCyq2shbGATEpCX95u0Kb5biNc'
+const apiKey = 'Av8b5xov1TJC6U5fvuiLq3CqnBWspbVX'
 // https://api.giphy.com/v1/gifs/random?api_key=YQnG8xqCyq2shbGATEpCX95u0Kb5biNc
 
 

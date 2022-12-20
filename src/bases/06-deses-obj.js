@@ -13,6 +13,11 @@ const { age, name, codeName, power = 'No tiene poder' } = person
 // console.log( codeName )
 // console.log( power )
 
+/**
+ * Desestructuracion de un objeto pasado por parametro
+ * @param {*} param0 
+ * @returns 
+ */
 const createHero = ({ name, age, codeName, power }) => 
     ({
         id: 1123416523,
