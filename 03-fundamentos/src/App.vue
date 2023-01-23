@@ -1,21 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <Counter :start="1" title="Couter" />
-
+  <Indecision />
 </template>
 
 <script>
-import Counter from './components/Counter.vue'
+//import Counter from './components/Counter.vue'
+import Indecision from './components/Indecision.vue'
 
-export default {  
+export default {
   name: 'App',
   components: {
-    Counter
+    Indecision,
   }
 }
 </script>
 
-<style>
+
+<style >
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
