@@ -1,6 +1,13 @@
 <template>
-  <h2>Counter</h2>
-  <p>{{ counter }}</p>
+  <h2>Counter !!!</h2>
+  <p>{{ counter }} <sup>2</sup> = {{ counter * counter }}</p>
+
+  <p>{{ counter }} <sup>2</sup> = {{ counter * counter }}</p>
+  <p>{{ counter }} <sup>2</sup> = {{ counter * counter }}</p>
+  <p>{{ counter }} <sup>2</sup> = {{ counter * counter }}</p>
+  <p>{{ counter }} <sup>2</sup> = {{ counter * counter }}</p>
+  <p>{{ counter }} <sup>2</sup> = {{ counter * counter }}</p>
+  <p>{{ counter }} <sup>2</sup> = {{ counter * counter }}</p>
 </template>
 
 <script>
@@ -10,6 +17,9 @@ export default {
       counter: 5,
     };
   },
+  methods: {
+    
+  }
 };
 </script>
 
