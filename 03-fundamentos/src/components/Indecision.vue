@@ -2,19 +2,32 @@
     <img src="https://via.placeholder.com/250" alt="bg">
     <div class="bg-dark"></div>
     <div class="indecision-container">
-        <input type="text" placeholder="Hazme una pregunta">
+        <input v-model="question" type="text" placeholder="Hazme una pregunta">
         <p>Recuerda terminar con signo de interrogacion (?)</p>
-    </div>
 
-    <div>
-        <h2>Sere millonario?</h2>
-        <h2>Si, No, Pensando</h2>
+        <div>
+            <h2>{{ question }}</h2>
+            <h1>Si, No, Pensando</h1>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
+ 
+    data() {
+        return {
+            question: null
+        }
+    },
+    watch: {
+        //se tiene que llamar a la propiedad que observo
+        question(value, oldvalue){
 
+            if (!value.includes('?')) return;
+            //todo call fecth
+        }
+    }
 }
 </script>
 
