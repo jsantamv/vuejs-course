@@ -1,13 +1,12 @@
 <template>
-  <h2>Counter !!!</h2>
-  <p>{{ counter }} <sup>2</sup> = {{ counter*counter }}</p>
+  <h2>Counter !!!</h2>  
+  <p>{{ counter }} <sup>2</sup> = {{ squereCounter }}</p>
 
-  <p>{{ counter }} <sup>2</sup> = {{ squereCounter }}</p>
-  <p>{{ counter }} <sup>2</sup> = {{ squereCounter }}</p>
-  <p>{{ counter }} <sup>2</sup> = {{ squereCounter }}</p>
-  <p>{{ counter }} <sup>2</sup> = {{ squereCounter }}</p>
-  <p>{{ counter }} <sup>2</sup> = {{ squereCounter }}</p>
-  <p>{{ counter }} <sup>2</sup> = {{ squereCounter }}</p>
+  <div>
+    <button>+1</button>
+    <button>-1</button>
+  </div>
+
 </template>
 
 <script>
@@ -18,14 +17,12 @@ export default {
     };
   },
   methods: {
-    getSquareValue() {
-      console.log("getSquareValue");
+    getSquareValue() {      
       return this.counter;
     },
   },
   computed: {
-    squereCounter() {
-      console.log("computed squere counter");
+    squereCounter() {      
       return this.counter * this.counter;
     },
   },
