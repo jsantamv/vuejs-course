@@ -41,4 +41,28 @@ describe('Counter component', () => {
         let value = wrapper.find('[data-testid="counter"]').text()
         expect(value).toEqual('101')
     })
+
+    test('Debe de establecer valor por default y igual de tipo', () => {
+
+        const { start } = wrapper.props()
+
+       const value = wrapper.find('[data-testid="counter"]').text()
+
+       expect(Number(value)).toEqual(start)
+
+    })
+
+    test('debe de mostrar prop tittle', () => { 
+
+        const title = 'Hola Mundo !!!!!'
+
+        const wrapper = shallowMount(Counter,{
+            props:{
+                title,
+                // start: 5
+            }
+        })
+        
+        expect(wrapper.find('h2').text()).toBe(title)
+     })
 })
