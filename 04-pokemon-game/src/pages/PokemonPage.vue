@@ -6,12 +6,12 @@
         <PokemonOption :pokemons="pokemonArr" @selection-pokemon="checkAnswer" />
     </div>
 
-    <div v-if="showAnswer" class="fade-in">
+    <template v-if="showAnswer" class="fade-in">
         <h2 v>{{ message }}</h2>
         <button @click="newGame">
             Nuevo Juego
         </button>
-    </div>
+    </template>
 
 </template>
 
@@ -47,7 +47,7 @@ export default {
                 this.message = `Opps, era ${this.pokemon.name}`
         },
         newGame() {
-            this.pokemon = null,
+            this.showpokemon = false,
             this.showAnswer = false
             this.pokemonArr = []
             this.pokemon = null
