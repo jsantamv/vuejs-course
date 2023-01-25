@@ -2,7 +2,9 @@
     <h2>{{ customTitle }}</h2>
     <p>{{ counter }} <sup>2</sup> = {{ squereCounter }}</p>
 
-    <div>
+    <p data-testid="counter">{{ counter }}</p>
+    
+    <div class="button">
         <button @click='increaseCounter'>+1</button>
         <button @click="decreaseCounter">-1</button>
     </div>
@@ -10,7 +12,6 @@
 </template>
 
 <script>
-//import { throwStatement } from '@babel/types';
 
 export default {
     props: {
@@ -42,7 +43,7 @@ export default {
         squereCounter() {
             return this.counter * this.counter;
         },
-        customTitle() { return this.title || 'Counter' }
+        customTitle() { return this.title || 'Counter!' }
     },
 };
 </script>
