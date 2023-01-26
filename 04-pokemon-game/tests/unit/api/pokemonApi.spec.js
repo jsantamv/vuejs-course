@@ -1,4 +1,3 @@
-
 import pokemonApi from "@/api/pokemonApi"
 
 describe('Pokemon API Test', () => {
