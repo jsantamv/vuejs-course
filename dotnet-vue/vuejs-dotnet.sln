@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "vuejs-dotnet", "vuejs-dotnet\vuejs-dotnet.esproj", "{5ACF4B88-4DF3-4B25-89FE-4D33D15C1DF8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5ACF4B88-4DF3-4B25-89FE-4D33D15C1DF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ACF4B88-4DF3-4B25-89FE-4D33D15C1DF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ACF4B88-4DF3-4B25-89FE-4D33D15C1DF8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5ACF4B88-4DF3-4B25-89FE-4D33D15C1DF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ACF4B88-4DF3-4B25-89FE-4D33D15C1DF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ACF4B88-4DF3-4B25-89FE-4D33D15C1DF8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {203C6018-C136-45DE-B61F-38CEDA3A61BE}
+	EndGlobalSection
+EndGlobal
