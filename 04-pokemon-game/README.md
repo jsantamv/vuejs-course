@@ -22,3 +22,11 @@ yarn test:unit
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+## Update SnapShot
+
+```
+npm run test ComponentName.spec.js -u
+npm run test ComponentName.spec.js --updateSnapshot
+```

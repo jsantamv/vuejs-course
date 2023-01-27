@@ -1,7 +1,6 @@
 import pokemonApi from "@/api/pokemonApi"
 
-
-const getPokemons = () => {
+export const getPokemons = () => {
     const pokemonsArr = Array.from(Array(650))
     return pokemonsArr.map((_, index) => index + 1)
 }
@@ -12,11 +11,7 @@ const getPokemonsOptions = async () => {
     return pokemons
 }
 
-const getPokemonsNames = async ([a, b, c, d] = []) => {
-    // const result = await pokemonApi.get(`/1`)
-    // console.log(result);
-    // console.log(a, b, c, d)
-
+export const getPokemonsNames = async ([a, b, c, d] = []) => {
     const promiseArr = [
         pokemonApi.get(`/${a}`),
         pokemonApi.get(`/${b}`),
@@ -32,7 +27,6 @@ const getPokemonsNames = async ([a, b, c, d] = []) => {
         { name: p3.data.name, id: p3.data.id },
         { name: p4.data.name, id: p4.data.id }
     ]
-    //    console.log(pok1, pok2, pok3, pok4)
 }
 
 export default getPokemonsOptions
