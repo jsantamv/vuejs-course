@@ -27,6 +27,9 @@ See
 
 - [Configuration Vue Router](https://router.vuejs.org/installation.html#direct-download-cdn)
 - [Life Cycle](https://vuejs.org/guide/essentials/lifecycle.html#lifecycle-diagram)
+
+   - [created](https://vuejs.org/api/options-lifecycle.html#created): es la mejor opciones para realizar las **peticiones de HTTP**
+
 - [Composition API: Lifecycle Hooks](https://vuejs.org/api/composition-api-lifecycle.html)
 
 
