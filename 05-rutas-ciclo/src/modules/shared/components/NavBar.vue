@@ -1,14 +1,30 @@
 <template>
   <div class="topnav">
-    <router-link to="/">Pokemon List</router-link>
+    <!-- <router-link :to="{ name: 'home' }">Pokemon List</router-link>
     <router-link :to="{ name: 'pokemon-id', params: { id: '12' } }">Pokemon Por Id</router-link>
-    <router-link to="/about">About</router-link>
+    <router-link :to="{ name: 'about' }">About</router-link> -->
+
+    <CustomLink v-for="link in links" :key="link.to" :link="link" />
   </div>
 </template>
 
 <script>
-export default {
+import { defineAsyncComponent } from 'vue'
 
+export default {
+  data() {
+    return {
+      links: [
+        { to: '/', name: 'Pokemons' },
+        { to: 'pokemonid/50', name: 'Por Id' },
+        { to: '/about', name: 'about' },
+        { to: 'https//google.com', name: 'Google' }
+      ]
+    }
+  },
+  components: {
+    CustomLink: defineAsyncComponent(() => import('./CustomLinks.vue'))
+  }
 }
 </script>
 
@@ -37,7 +53,7 @@ export default {
 }
 
 /* Add a color to the active/current link */
-.topnav a.active {
+.router-link-exact-active {
   background-color: #04AA6D;
   color: white;
 }

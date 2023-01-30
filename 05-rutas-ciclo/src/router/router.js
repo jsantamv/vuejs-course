@@ -4,19 +4,26 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 // Each route should map to a component.
 // We'll talk about nested routes later.
 const routes = [
+
+    {
+        //path de redirect en caso de mantenimientos 
+        // o paginas mas nuevas. 
+        path: '/',
+        redirect: '/home'
+    },
     {
         path: '/',
-        //component: ListPage
+        name: 'home',
         component: () => import(/* webpackChunkName: "ListPage" */ '@/modules/pokemon/pages/ListPage')
     },
     {
         path: '/about',
-        //esto es para indicarle al web el nombre del componente
+        name: 'about',
         component: () => import(/* webpackChunkName: "AboutPage" */ '@/modules/pokemon/pages/AboutPage')
     },
     {
-        path: '/:id',
-        name:'pokemon-id',
+        path: '/pokemonid/:id',
+        name: 'pokemon-id',
         component: () => import(/* webpackChunkName: "PokemonPage" */ '@/modules/pokemon/pages/PokemonPage'),
         props: (route) => {
             const id = Number(route.params.id)
@@ -27,9 +34,9 @@ const routes = [
     },
     {
         path: '/:pathMatch(.*)*',
+        name: 'not-found',
         //component: NoPageFound
         component: () => import(/* webpackChunkName: "NoPageFound" */ '@/modules/shared/pages/NoPageFound')
-
     },
 ]
 
