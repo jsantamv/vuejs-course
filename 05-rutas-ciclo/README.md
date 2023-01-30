@@ -33,3 +33,7 @@ See
 ```
 yarn add vue-router@4
 ```
+
+## Vue and NetCore
+
+[vue netcore](https://www.youtube.com/watch?v=qS833HGKPD8)
