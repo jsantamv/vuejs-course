@@ -23,7 +23,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Pagina de Router
 
-See [Configuration Vue Router](https://router.vuejs.org/installation.html#direct-download-cdn).
+See 
+
+- [Configuration Vue Router](https://router.vuejs.org/installation.html#direct-download-cdn)
+- [Life Cycle](https://vuejs.org/guide/essentials/lifecycle.html#lifecycle-diagram)
+- [Composition API: Lifecycle Hooks](https://vuejs.org/api/composition-api-lifecycle.html)
 
 
 ```
