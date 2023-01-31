@@ -2,8 +2,8 @@
     <a v-if="isExternalLink" :href="link.to" target="_blank">
         {{ link.name }}
     </a>
-    <router-link v-else :to="link.to">
-        {{ link.name }}
+    <router-link v-else :to="link.to" v-slot="{ href }">
+        <a :href="href">{{ link.name }}</a>
     </router-link>
 </template>
 
