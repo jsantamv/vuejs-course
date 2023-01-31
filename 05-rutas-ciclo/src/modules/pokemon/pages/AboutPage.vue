@@ -1,27 +1,24 @@
 <template>
     <h1>About Page</h1>
-
     <hr>
-
     <h2>{{ name }}</h2>
     <button @click="onChangeName">
-        Cambiar Nombre
+        Cambiar nombre
     </button>
-
 </template>
+
 
 <script>
 export default {
 
     data() {
         return {
-            name: 'santamaria'
+            name: 'Fernando'
         }
     },
     methods: {
         onChangeName() {
-            console.log('Se cambiara a Yessenia');
-            this.name = 'Yessenia'
+            this.name = 'Melissa'
         }
     },
 
@@ -29,7 +26,9 @@ export default {
         console.log('beforeCreate')
     },
     created() {
+        this.name = 'Juan Carlos'
         console.log('created')
+        // Peticiones HTTP
     },
     beforeMount() {
         console.log('beforeMount')
@@ -63,7 +62,6 @@ export default {
     },
     renderTriggered() {
         console.log('renderTriggered')
-    }
+    },
 }
-
 </script>

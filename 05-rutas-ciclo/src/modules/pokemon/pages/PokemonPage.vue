@@ -1,5 +1,5 @@
 <template>
-    <h1>Pokemon Page <span>#{{ id }}</span></h1>
+    <h1>Pokemon: <span>#{{ id }}</span> </h1>
     <div v-if="pokemon">
         <img :src="pokemon.sprites.front_default" :alt="pokemon.name">
     </div>
@@ -10,30 +10,35 @@ export default {
     props: {
         id: {
             type: Number,
-            requierd: true
+            required: true
         },
     },
+
     data() {
         return {
+            // id: this.$route.params.id,
             pokemon: null
         }
     },
+    
     created() {
+
+        // const { id } = this.$route.params
+        // console.log(id)
+        // this.id = id
+        // console.log(this.$attrs)
         this.getPokemon()
     },
     methods: {
-
         async getPokemon() {
             try {
-
-                const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${this.id}`)
-                    .then(r => r.json())
-
-                this.pokemon = pokemon;
+                const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${ this.id }`).then( r => r.json() );
+                console.log(pokemon)
+                this.pokemon = pokemon
 
             } catch (error) {
                 this.$router.push('/')
-                console.log('no hay nada que hacer aqui');
+                console.log('No hay nada que hacer aquí')
             }
         }
     },
@@ -42,5 +47,6 @@ export default {
             this.getPokemon()
         }
     }
+
 }
 </script>
