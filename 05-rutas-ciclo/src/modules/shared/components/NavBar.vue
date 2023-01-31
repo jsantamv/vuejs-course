@@ -53,8 +53,8 @@ export default {
 }
 
 /* Add a color to the active/current link */
-.router-link-exact-active {
+/* .router-link-exact-active {
   background-color: #04AA6D;
   color: white;
-}
+} */
 </style>

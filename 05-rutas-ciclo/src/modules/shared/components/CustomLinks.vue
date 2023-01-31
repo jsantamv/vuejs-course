@@ -1,9 +1,9 @@
 <template>
-    <a v-if="isExternalLink" :href="link.to" target="_blank">
+    <a v-if="isExternalLink" :href="link.to" target="_blank" class="normal-link">
         {{ link.name }}
     </a>
-    <router-link v-else :to="link.to" v-slot="{ href }">
-        <a :href="href">{{ link.name }}</a>
+    <router-link v-else :to="link.to" v-slot="{ href, isActive }">
+        <a :href="href" :class="isActive ? 'is-active' : 'normal-link'">{{ link.name }}</a>
     </router-link>
 </template>
 
@@ -23,6 +23,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.is-active {
+    color: #04AA6D;
+}
 
+.normal-link {
+    color: lightcoral
+}
 </style>

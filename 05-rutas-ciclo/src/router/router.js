@@ -11,27 +11,27 @@ const routes = [
         path: '/',
         redirect: '/home'
     },
-    {
-        path: '/',
-        name: 'home',
-        component: () => import(/* webpackChunkName: "ListPage" */ '@/modules/pokemon/pages/ListPage')
-    },
-    {
-        path: '/about',
-        name: 'about',
-        component: () => import(/* webpackChunkName: "AboutPage" */ '@/modules/pokemon/pages/AboutPage')
-    },
-    {
-        path: '/pokemonid/:id',
-        name: 'pokemon-id',
-        component: () => import(/* webpackChunkName: "PokemonPage" */ '@/modules/pokemon/pages/PokemonPage'),
-        props: (route) => {
-            const id = Number(route.params.id)
-            return {
-                id: isNaN(id) ? 1 : Number(id)
-            }
-        }
-    },
+    // {
+    //     path: '/',
+    //     name: 'home',
+    //     component: () => import(/* webpackChunkName: "ListPage" */ '@/modules/pokemon/pages/ListPage')
+    // },
+    // {
+    //     path: '/about',
+    //     name: 'about',
+    //     component: () => import(/* webpackChunkName: "AboutPage" */ '@/modules/pokemon/pages/AboutPage')
+    // },
+    // {
+    //     path: '/pokemonid/:id',
+    //     name: 'pokemon-id',
+    //     component: () => import(/* webpackChunkName: "PokemonPage" */ '@/modules/pokemon/pages/PokemonPage'),
+    //     props: (route) => {
+    //         const id = Number(route.params.id)
+    //         return {
+    //             id: isNaN(id) ? 1 : Number(id)
+    //         }
+    //     }
+    // },
     {
         path: '/:pathMatch(.*)*',
         name: 'not-found',
