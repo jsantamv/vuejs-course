@@ -4,13 +4,13 @@
 </template>
 
 <script>
-
 import { defineAsyncComponent } from 'vue'
+
 
 export default {
   name: 'App',
   components: {
-    FirstCounter: defineAsyncComponent(() => import('@/components/FirstCounter'))
+    FirstCounter: defineAsyncComponent( () => import('@/components/FirstCounter.vue') )
   }
 }
 </script>
