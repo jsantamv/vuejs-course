@@ -1,13 +1,16 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <FirstCounter />
 </template>
 
 <script>
 
+import { defineAsyncComponent } from 'vue'
+
 export default {
   name: 'App',
   components: {
+    FirstCounter: defineAsyncComponent(() => import('@/components/FirstCounter'))
   }
 }
 </script>
