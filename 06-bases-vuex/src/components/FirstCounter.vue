@@ -15,7 +15,7 @@
     <h2>mapState: {{ count }}</h2>
     <h2>last mutation: {{ lastMutation }}</h2>
 
-    <h2>Direct Getters: {{ $store.getters.squareCount }}</h2>
+    <h2>Direct Getters: {{ $store.getters['counter/squareCount'] }}</h2>
 
 </template>
 
