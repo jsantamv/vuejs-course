@@ -1,5 +1,13 @@
 # 06-bases-vuex
 
+See [Configuration VUEX](https://vuex.vuejs.org/).
+
+See [Configuration namespacing](https://vuex.vuejs.org/guide/modules.html#namespacing).
+
+
+
+
+
 ## Project setup
 ```
 yarn install
@@ -22,3 +30,5 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
