@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeView.vue debe de renderizar el componente correctamente 1`] = `
+<div class="home"><img alt="Vue logo" src="">
+  <div>
+    <h1>Hola Mundo</h1><button class="btn btn-primary m-2">Primary</button><button class="btn btn-secondary m-2">Secondary</button><button class="btn btn-success m-2">Success</button>
+  </div>
+</div>
+`;
