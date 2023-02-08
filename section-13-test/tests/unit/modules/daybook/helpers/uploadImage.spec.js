@@ -14,7 +14,7 @@ describe('Pruebas en el uploadImage ', () => {
     
     test('debe de cargar un archivo y retornar el url', async( done ) => {
         
-        const { data } = await axios.get('https://res.cloudinary.com/dx0pryfzn/image/upload/v1627077252/ip3vwn8sjvnncphqka4y.jpg', {
+        const { data } = await axios.get('https://res.cloudinary.com/dlkeaojyg/image/upload/v1627077252/ip3vwn8sjvnncphqka4y.jpg', {
             responseType: 'arraybuffer'
         })
 
