@@ -1,22 +1,23 @@
 <template>
-    <h1>Counter - vuex</h1>
+    <div>
+        <h1>Counter - vuex</h1>
 
-    <h1>Formas de llamar el STATE</h1>
+        <h1>Formas de llamar el STATE</h1>
 
-    <h2>Direct access: {{ $store.state.counter.count }}</h2>
-    <h2>Computed: {{ countComputed }}</h2>
+        <h2>Direct access: {{ $store.state.counter.count }}</h2>
+        <h2>Computed: {{ countComputed }}</h2>
 
-    <button @click="increment">+1</button>
-    <button @click="incrementBy">+5</button>
-    <button @click="incrementRandomInt" :disabled="isLoading">random</button>
+        <button @click="increment">+1</button>
+        <button @click="incrementBy">+5</button>
+        <button @click="incrementRandomInt" :disabled="isLoading">random</button>
 
-    <br>
-    <h1>mapState</h1>
-    <h2>mapState: {{ count }}</h2>
-    <h2>last mutation: {{ lastMutation }}</h2>
+        <br>
+        <h1>mapState</h1>
+        <h2>mapState: {{ count }}</h2>
+        <h2>last mutation: {{ lastMutation }}</h2>
 
-    <h2>Direct Getters: {{ $store.getters['counter/squareCount'] }}</h2>
-
+        <h2>Direct Getters: {{ $store.getters['counter/squareCount'] }}</h2>
+    </div>
 </template>
 
 <script>
@@ -43,8 +44,8 @@ export default {
         },
         incrementBy() {
             this.$store.commit('counter/incrementBy', 5)
-        },        
-        ...mapActions('counter',['incrementRandomInt'])
+        },
+        ...mapActions('counter', ['incrementRandomInt'])
     }
 }
 </script>
