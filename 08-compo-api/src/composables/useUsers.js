@@ -10,8 +10,6 @@ const useUsers = () => {
 
     const getUsers = async (page = 1) => {
 
-        console.log('entre');
-
         if (page <= 0) page = 1
         isLoading.value = true
 
