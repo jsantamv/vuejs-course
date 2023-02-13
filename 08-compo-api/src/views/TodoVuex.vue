@@ -25,7 +25,19 @@
     <button class="button-3" @click="openModal">+ Add Task</button>
 
     <!-- Modal -->
-    <addTask v-if="isOpen" @on:close="closeModal" title="Titulo Title" otherTitle="otro title">
+    <addTask v-if="isOpen" @on:close="closeModal" title="Creacion de tareas nuevas">
+
+        <template v-slot:header>
+            <h1>Nueva tarea</h1>
+        </template>
+
+        <template v-slot:body>
+            <form @submit.prevent="createTodo(txtNewTodo); isOpen=false">
+                <input type="text" placeholder="write new task" v-model="txtNewTodo"><br>
+                <button class="button-3" type="submit">Crear</button>
+            </form>
+        </template>
+
 
     </addTask>
     <!-- Form -->
@@ -36,10 +48,11 @@
 import useTodos from '@/composables/useTodos';
 import addTask from '@/components/AddTask.vue'
 import { ref } from 'vue';
+import { isTemplateNode } from '@vue/compiler-core';
 
 
 export default {
-    components: { addTask },
+    components: { addTask, isTemplateNode },
 
     setup() {
 
@@ -67,6 +80,7 @@ export default {
 
             openModal: () => isOpen.value = true,
             closeModal: () => isOpen.value = false,
+            txtNewTodo: ref('')
 
         }
     }
@@ -74,6 +88,61 @@ export default {
 </script>
 
 <style scoped>
+/* efectos sobre los imputs */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+    margin: 3px;
+    border: 1px solid #c9c9c9;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0px 0px 2px #c9c9c9 inset;
+    background: white;
+    padding: 2px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    color: #ec1010;
+    transition: all 300ms;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+select:focus {
+    border: 1px solid #c9c9c9;
+    color: black !important;
+}
+
+/* efecto sobre los botones */
+input[type="button"],
+input[type="submit"],
+input[type="reset"] button {
+    margin: 3px;
+    /* display: block; */
+    border-radius: 2px;
+    width: 60px;
+    padding: 3px;
+    background-color: #70b231;
+    border: 1px solid green;
+    cursor: pointer;
+    color: white;
+    align-items: center;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover button:hover {
+    box-shadow: 0px 0px 4px gray;
+}
+
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active button:active {
+    box-shadow: 0px 0px 6px gray inset;
+    text-shadow: 0px 0px 3px #ccc;
+}
+
 ul {
     width: 300px;
     text-align: left;
