@@ -2,7 +2,7 @@
     <div>
         <h1>Thanos to do List</h1>
         <h4>Tareas: {{ pending.length }}</h4>
-        <h4>Todos: {{ all.length }}</h4>
+        <!-- <h4>Todos: {{ all.length }}</h4> -->
         <h4>Completados: {{ completed.length }}</h4>
     </div>
     <hr>
@@ -24,30 +24,27 @@
 </template>
 
 <script>
-import { computed, ref } from 'vue'
-import { useStore } from 'vuex'
+import useTodos from '@/composables/useTodos';
+
 
 export default {
 
     setup() {
 
-        //composables
-        const store = useStore()
-        const currentTab = ref('all')
+        const { currentTab,
+            pending,            
+            completed,
+            getTodosbyTab,
+            toggleTodo, } = useTodos()
 
         return {
             currentTab,
-                        
-            pending: computed(() => store.getters['pendingTodos']),
-            all: computed(() => store.getters['all']),
-            completed: computed(() => store.getters['completed']),
-            getTodosbyTab: computed(() => store.getters['getTodosbyTab'](currentTab.value)),
-            
-            //methods
-            toggleTodo: (id) => store.commit('toggleTodo', id),
+            pending,          
+            completed,
+            getTodosbyTab,
+            toggleTodo,
         }
     }
-
 }
 </script>
 
