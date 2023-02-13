@@ -52,7 +52,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 ul {
     width: 300px;
     text-align: left;
