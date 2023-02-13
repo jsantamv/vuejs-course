@@ -7,13 +7,13 @@
     </div>
     <hr>
     <div>
-        <button @click="currentTab = 'all'" class="button-3" :class="{ 'active': currentTab === 'all' }">Todos: {{
+        <button @click="currentTab = 'all'" class="button-3" :class="{ 'active': currentTab === 'all' }">To do: {{
             all.length
         }}</button>
         <button @click="currentTab = 'pending'" class="button-3"
-            :class="{ 'active': currentTab === 'pending' }">Pendientes: {{ pending.length }}</button>
+            :class="{ 'active': currentTab === 'pending' }">Pending: {{ pending.length }}</button>
         <button @click="currentTab = 'completed'" class="button-3"
-            :class="{ 'active': currentTab === 'completed' }">Completados: {{ completed.length }}</button>
+            :class="{ 'active': currentTab === 'completed' }">Completed: {{ completed.length }}</button>
     </div>
     <div>
         <ul>
@@ -22,14 +22,24 @@
         </ul>
     </div>
 
+    <button class="button-3" @click="openModal">+ Add Task</button>
+
+    <!-- Modal -->
+    <addTask v-if="isOpen" @on:close="closeModal" title="Titulo Title" otherTitle="otro title">
+
+    </addTask>
+    <!-- Form -->
 
 </template>
 
 <script>
 import useTodos from '@/composables/useTodos';
+import addTask from '@/components/AddTask.vue'
+import { ref } from 'vue';
 
 
 export default {
+    components: { addTask },
 
     setup() {
 
@@ -38,7 +48,11 @@ export default {
             pending,
             completed,
             getTodosbyTab,
-            toggleTodo, } = useTodos()
+            toggleTodo,
+            createTodo
+        } = useTodos()
+
+        const isOpen = ref(false)
 
         return {
             currentTab,
@@ -47,6 +61,13 @@ export default {
             completed,
             getTodosbyTab,
             toggleTodo,
+            createTodo,
+
+            isOpen,
+
+            openModal: () => isOpen.value = true,
+            closeModal: () => isOpen.value = false,
+
         }
     }
 }
