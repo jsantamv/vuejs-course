@@ -1,17 +1,19 @@
 <template>
     <div>
         <h1>Thanos to do List</h1>
-        <h4>Tareas: {{ pending.length }}</h4>
-        <!-- <h4>Todos: {{ all.length }}</h4> -->
-        <h4>Completados: {{ completed.length }}</h4>
+        <!-- <h4>Tareas: {{ pending.length }}</h4>
+        <h4>Todos: {{ all.length }}</h4>
+        <h4>Completados: {{ completed.length }}</h4> -->
     </div>
     <hr>
     <div>
-        <button @click="currentTab = 'all'" class="button-3" :class="{ 'active': currentTab === 'all' }">Todos</button>
+        <button @click="currentTab = 'all'" class="button-3" :class="{ 'active': currentTab === 'all' }">Todos: {{
+            all.length
+        }}</button>
         <button @click="currentTab = 'pending'" class="button-3"
-            :class="{ 'active': currentTab === 'pending' }">Pendientes</button>
+            :class="{ 'active': currentTab === 'pending' }">Pendientes: {{ pending.length }}</button>
         <button @click="currentTab = 'completed'" class="button-3"
-            :class="{ 'active': currentTab === 'completed' }">Completados</button>
+            :class="{ 'active': currentTab === 'completed' }">Completados: {{ completed.length }}</button>
     </div>
     <div>
         <ul>
@@ -32,14 +34,16 @@ export default {
     setup() {
 
         const { currentTab,
-            pending,            
+            all,
+            pending,
             completed,
             getTodosbyTab,
             toggleTodo, } = useTodos()
 
         return {
             currentTab,
-            pending,          
+            all,
+            pending,
             completed,
             getTodosbyTab,
             toggleTodo,
@@ -74,6 +78,7 @@ button {
 
 .completed {
     text-decoration: line-through;
+    color: blue;
 }
 
 /* CSS */
