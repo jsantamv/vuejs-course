@@ -4,16 +4,14 @@
     <h5 v-if="errorMessage">{{ errorMessage }}</h5>
 
     <div v-if="users.length > 0">
-        <table id="customers">
-            <tr>
-                <th>Nombre</th>
-                <th>Email</th>
-            </tr>
-            <tr v-for="{ first_name, last_name, email, id } in users" :key="id">
-                <td>{{ first_name }} {{ last_name }}</td>
-                <td>{{ email }}</td>
-            </tr>
-        </table>
+
+
+        <user-list :users="users" v-slot="{ user }">
+
+            <h5>{{ user.first_name }} {{ user.last_Name }}</h5><br>
+            <span>{{ user.email }}</span>
+
+        </user-list>
     </div>
 
     <button @click="prevPage">atras </button>
@@ -27,9 +25,12 @@
 <script>
 
 import useUsers from '@/composables/useUsers'
-import { onBeforeMount } from 'vue'
+import UserList from '@/components/UserList.vue'
 
 export default {
+    components: {
+        UserList
+    },
     setup() {
 
         const {
@@ -37,7 +38,7 @@ export default {
             errorMessage,
             isLoading,
             total_pages,
-            users,   
+            users,
 
             nextPage,
             prevPage,
@@ -100,33 +101,5 @@ button:active {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     background-color: #83e701;
     /* Green */
-}
-
-#customers {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-#customers td,
-#customers th {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-#customers tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-#customers tr:hover {
-    background-color: #ddd;
-}
-
-#customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #4CAF50;
-    color: white;
 }
 </style>
