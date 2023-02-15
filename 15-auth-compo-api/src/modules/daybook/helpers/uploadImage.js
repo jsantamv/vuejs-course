@@ -11,7 +11,9 @@ const uploadImage = async ( file ) => {
         formData.append('upload_preset','curso-vue')
         formData.append('file', file )
 
-        const url = 'https://api.cloudinary.com/v1_1/dx0pryfzn/image/upload'
+        const url = 'https://api.cloudinary.com/v1_1/dlkeaojyg/image/upload'
+                     
+        console.log(url);
         const { data } = await axios.post(url, formData)
 
         return data.secure_url
