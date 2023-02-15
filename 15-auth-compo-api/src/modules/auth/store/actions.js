@@ -40,13 +40,8 @@ export const singInUser = async ({ commit }, user) => {
 
     try {
 
-        const { data } = await authApi.post(':signUp', { email, password, returnSecureToken: true })
+        const { data } = await authApi.post(':signInWithPassword', { email, password, returnSecureToken: true })
         const { idToken, refreshToken } = data
-
-        const resp = await authApi.post(':update', {
-            displayName: name,
-            idToken
-        })
 
         //TODO mutation
         //no requiere el password
