@@ -65,3 +65,30 @@ export const singInUser = async ({ commit }, user) => {
 
 }
 
+
+export const checkAuthentication = async ({ commit }) => {
+    const idToken = localStorage.getItem('idToken')
+    const refreshToken = localStorage.getItem('idToken')
+
+    if (!idToken) {
+        commit('logOut')
+        return { ok: false, message: 'no hay token en la peticion' }
+    }
+
+    try {
+        const { data } = await authApi.post(':lookup', { idToken })
+        const { displayName, email } = data.user[0]
+
+        const user = {
+            name: displayName,
+            email
+        }
+
+        commit('loginUser', { user, idToken, refreshToken })
+        return { ok: true }
+
+    } catch (error) {
+        commit('logOut')
+        return { ok: false, message: error.response.data.error.message }
+    }
+}
