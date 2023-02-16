@@ -13,14 +13,13 @@ const uploadImage = async ( file ) => {
 
         const url = 'https://api.cloudinary.com/v1_1/dlkeaojyg/image/upload'
                      
-        console.log(url);
         const { data } = await axios.post(url, formData)
 
         return data.secure_url
 
     } catch (error) {
         console.error('Error al cargar la imagen, revisar logs')
-        console.log(error)
+        console.warn(error)
         return null
     }
 
