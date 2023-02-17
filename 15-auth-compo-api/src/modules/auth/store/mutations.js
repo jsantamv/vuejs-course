@@ -1,4 +1,9 @@
 
+/**
+ * login con firebase
+ * @param {*} state 
+ * @param {*} param1 
+ */
 export const loginUser = (state, { user, idToken, refreshToken }) => {
 
     if (idToken) {
