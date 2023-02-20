@@ -2,7 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn flat dense round icon="las la-ellipsis-v" aria-label="Menu" @click="toggleLeftDrawer" />
+        <q-btn flat dense round icon="las la-ellipsis-v" aria-label="Menu" @click="toggleSideMenu" />
 
         <q-toolbar-title>
           Quasar App
@@ -12,7 +12,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
+    <q-drawer v-model="sideMenuOpen" show-if-above bordered>
       <q-list>
         <q-item-label header>
           Essential Links
@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import { computed } from 'vue'
+import { useStore } from 'vuex'
 import { defineComponent, ref } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
 import { linksList } from '../router/link-list'
@@ -42,9 +44,18 @@ export default defineComponent({
   },
 
   setup() {
+    const store = useStore()
+    // console.log(store.getters['ui/isSideMenuOpen']);
+
+
     const leftDrawerOpen = ref(false)
 
     return {
+      sideMenuOpen: computed(() => store.getters['ui/isSideMenuOpen']),
+      toggleSideMenu(){
+        store.commit('ui/toggleSideMenu')
+      },
+
       essentialLinks: linksList,
       leftDrawerOpen,
       toggleLeftDrawer() {
