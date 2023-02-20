@@ -32,7 +32,7 @@
 import { defineComponent, ref } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
 import { linksList } from '../router/link-list'
-import useUI from '@/composables/useUI.js';
+import useUI from '../composables/useUI'
 
 
 

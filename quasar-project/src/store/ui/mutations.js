@@ -1,3 +1,3 @@
-export function toggleSideMenu (state) {
+export function toggleSideMenu(state) {
     state.isSideMenuOpen = !state.isSideMenuOpen
 }

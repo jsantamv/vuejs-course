@@ -1,14 +1,25 @@
 import { computed } from 'vue'
 import { useStore } from 'vuex'
 
-const useFunction = () => {
+const useUI = () => {
 
     const store = useStore()
 
     return {
-        sideMenuOpen: computed(() => store.getters['ui/isSideMenuOpen']),
+        
+        /**propiedad computada */
+        sideMenuOpen: computed({
+            get() {
+                return store.getters['ui/isSideMenuOpen']
+            },
+            set(val) {
+                store.commit('ui/toggleSideMenu')
+            }
+        }),
+        /**funcion commit del evento */
         toggleSideMenu() { store.commit('ui/toggleSideMenu') },
     }
+
 }
 
-export default useFunction
+export default useUI
