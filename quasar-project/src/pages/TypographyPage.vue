@@ -20,13 +20,15 @@
     </q-separator>
 
 
-        <span class="text-weight-thin">Cupidatat amet fugiat consectetur minim aute nostrud.</span> 
-        <span class="text-weight-light">Proident mollit sunt laborum pariatur.</span> 
-        <span class="text-weight-regular">Fugiat pariatur tempor aliqua cillum est est cillum in aliqua.</span> 
-        <span class="text-weight-medium">Esse laboris nostrud amet tempor.</span> 
-        <span class="text-weight-bold">Ea enim nostrud minim occaecat eiusmod.</span> 
-        <span class="text-weight-bolder">Amet sunt ullamco velit culpa in magna aliquip veniam.</span> 
+    <span class="text-weight-thin">Cupidatat amet fugiat consectetur minim aute nostrud.</span>
+    <span class="text-weight-light">Proident mollit sunt laborum pariatur.</span>
+    <span class="text-weight-regular">Fugiat pariatur tempor aliqua cillum est est cillum in aliqua.</span>
+    <span class="text-weight-medium">Esse laboris nostrud amet tempor.</span>
+    <span class="text-weight-bold">Ea enim nostrud minim occaecat eiusmod.</span>
+    <span class="text-weight-bolder">Amet sunt ullamco velit culpa in magna aliquip veniam.</span>
 
+
+    <q-btn color="primary" label="Abrir menu Lateral" class="q-mt-md"/>
   </q-page>
 </template>
 
