@@ -18,7 +18,7 @@
           Essential Links
         </q-item-label>
 
-        <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" />
+        <EssentialLink v-for="link in linksList" :key="link.title" v-bind="link" />
       </q-list>
     </q-drawer>
 
@@ -29,11 +29,11 @@
 </template>
 
 <script>
-import { computed } from 'vue'
-import { useStore } from 'vuex'
 import { defineComponent, ref } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
 import { linksList } from '../router/link-list'
+import useUI from '@/composables/useUI.js';
+
 
 
 export default defineComponent({
@@ -43,24 +43,18 @@ export default defineComponent({
     EssentialLink
   },
 
+
   setup() {
-    const store = useStore()
-    // console.log(store.getters['ui/isSideMenuOpen']);
 
-
-    const leftDrawerOpen = ref(false)
+    const { sideMenuOpen, toggleSideMenu } = useUI()
 
     return {
-      sideMenuOpen: computed(() => store.getters['ui/isSideMenuOpen']),
-      toggleSideMenu(){
-        store.commit('ui/toggleSideMenu')
-      },
 
-      essentialLinks: linksList,
-      leftDrawerOpen,
-      toggleLeftDrawer() {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      }
+      sideMenuOpen,
+      toggleSideMenu,
+
+      linksList,
+
     }
   }
 })
