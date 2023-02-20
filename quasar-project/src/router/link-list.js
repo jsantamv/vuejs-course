@@ -18,6 +18,12 @@ export const linksList = [
       link: 'dialogs-page',
     },
     {
+      title: 'Forms',
+      caption: 'Forms Input, Valdaciones, otros',
+      icon: 'lab la-wpforms',
+      link: 'forms-page',
+    },
+    {
       title: 'Docs',
       caption: 'quasar.dev',    
       icon: 'las la-graduation-cap',

@@ -7,7 +7,8 @@ const routes = [
       { path: '', component: () => import('pages/IndexPage.vue') },
       { path: 'typography-page', name: 'typography-page', component: () => import('pages/TypographyPage.vue') },
       { path: 'flex-page', name: 'flex-page', component: () => import('pages/FlexPage.vue') },
-      { path: 'dialogs-page', name: 'dialogs-page', component: () => import('pages/Dialogs.vue') }
+      { path: 'dialogs-page', name: 'dialogs-page', component: () => import('pages/Dialogs.vue') },
+      { path: 'forms-page', name: 'forms-page', component: () => import('pages/Forms.vue') },
     ]
   },
 
