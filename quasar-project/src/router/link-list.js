@@ -12,6 +12,12 @@ export const linksList = [
       link: 'flex-page',
     },
     {
+      title: 'Dialogs',
+      caption: 'Alertas, diaglos y confirmaciones',
+      icon: 'lab la-windows',
+      link: 'dialogs-page',
+    },
+    {
       title: 'Docs',
       caption: 'quasar.dev',    
       icon: 'las la-graduation-cap',
