@@ -28,14 +28,26 @@
     <span class="text-weight-bolder">Amet sunt ullamco velit culpa in magna aliquip veniam.</span>
 
 
-    <q-btn color="primary" label="Abrir menu Lateral" class="q-mt-md"/>
+    <q-btn color="primary" label="Abrir menu Lateral" class="q-mt-md" @click="toggleSideMenu" />
   </q-page>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
+import useUI from '../composables/useUI'
+
 
 export default defineComponent({
-  name: 'TypographyPage'
+  name: 'TypographyPage',
+
+  setup() {
+    const { toggleSideMenu } = useUI()
+
+    return {
+      toggleSideMenu
+    }
+  }
+
+
 })
 </script>
