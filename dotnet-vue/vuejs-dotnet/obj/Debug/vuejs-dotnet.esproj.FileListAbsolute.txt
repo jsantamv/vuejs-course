@@ -1,2 +1,4 @@
 C:\repos\vuejs-course\dotnet-vue\vuejs-dotnet\vuejs-dotnet\obj\Debug\vuejs-dotnet.esproj.SuggestedBindingRedirects.cache
 C:\repos\vuejs-course\dotnet-vue\vuejs-dotnet\vuejs-dotnet\obj\Debug\vuejs-dotnet.esproj.CoreCompileInputs.cache
+C:\repos\vuejs-course\dotnet-vue\vuejs-dotnet\obj\Debug\vuejs-dotnet.esproj.SuggestedBindingRedirects.cache
+C:\repos\vuejs-course\dotnet-vue\vuejs-dotnet\obj\Debug\vuejs-dotnet.esproj.CoreCompileInputs.cache

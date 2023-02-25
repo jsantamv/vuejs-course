@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Index de la vista Clientes";
+}
+
+<div id="app">
+    <h1>{{message}}</h1>
+</div>
+
+
+@section scripts {
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                message: "hola"
+            }
+        })
+    </script>
+}
